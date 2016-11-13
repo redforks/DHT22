@@ -1,34 +1,20 @@
-//
-//    FILE: dht22_test.ino
-//  AUTHOR: Rob Tillaart
-// VERSION: 0.1.03
-// PURPOSE: DHT library test sketch for DHT22 && Arduino
-//     URL:
-// HISTORY:
-// 0.1.03 extended stats for all errors
-// 0.1.02 added counters for error-regression testing.
-// 0.1.01
-// 0.1.00 initial version
-//
-// Released to the public domain
-//
+// FILE: dht22_test.ino AUTHOR: Rob Tillaart VERSION: 0.1.03 PURPOSE: DHT library test sketch for DHT22 && Arduino URL: HISTORY: 0.1.03 extended stats for all errors 0.1.02 added counters for error-regression testing.  0.1.01 0.1.00 initial version Released to the public domain
 
 #include <dht.h>
 
 dht DHT;
 
-#define DHT22_PIN 5
+#define DHT22_PIN 6
 
-struct
-{
-    uint32_t total;
-    uint32_t ok;
-    uint32_t crc_error;
-    uint32_t time_out;
-    uint32_t connect;
-    uint32_t ack_l;
-    uint32_t ack_h;
-    uint32_t unknown;
+struct {
+  uint32_t total; 
+  uint32_t ok;
+  uint32_t crc_error;
+  uint32_t time_out;
+  uint32_t connect;
+  uint32_t ack_l;
+  uint32_t ack_h;
+  uint32_t unknown;
 } stat = { 0,0,0,0,0,0,0,0};
 
 void setup()

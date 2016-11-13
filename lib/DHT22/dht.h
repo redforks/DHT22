@@ -65,9 +65,9 @@ public:
     inline int8_t read44(uint8_t pin) { return read(pin); };
 
     // 655 means 65.5%
-    word humidity;
+    uint16_t humidity;
     // 255 means 25.5°C, -102 means -10.2°C
-    short temperature;
+    int16_t temperature;
 
 private:
     uint8_t bits[5];  // buffer to receive data
